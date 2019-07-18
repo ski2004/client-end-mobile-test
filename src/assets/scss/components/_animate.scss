@@ -1,0 +1,98 @@
+////////////////////////////////////////////////////////////
+// Import everything to generate your animate sass module //
+////////////////////////////////////////////////////////////
+@import "animate/helpers/mixins",
+	"animate/helpers/settings",
+	"animate/helpers/base";
+
+// ATTENTION
+@import	"animate/ani/attention-seekers/bounce",
+	"animate/ani/attention-seekers/flash",
+	"animate/ani/attention-seekers/pulse",
+	"animate/ani/attention-seekers/shake",
+	"animate/ani/attention-seekers/swing",
+	"animate/ani/attention-seekers/wiggle",
+	"animate/ani/attention-seekers/wobble",
+	"animate/ani/attention-seekers/tada";
+
+// BOUNCE
+@import "animate/ani/bounce-enter/bounceIn",
+	"animate/ani/bounce-enter/bounceInDown",
+	"animate/ani/bounce-enter/bounceInLeft",
+	"animate/ani/bounce-enter/bounceInRight",
+	"animate/ani/bounce-enter/bounceInUp",
+	"animate/ani/bounce-exit/bounceOut",
+	"animate/ani/bounce-exit/bounceOutDown",
+	"animate/ani/bounce-exit/bounceOutLeft",
+	"animate/ani/bounce-exit/bounceOutRight",
+	"animate/ani/bounce-exit/bounceOutUp";
+
+// FADE
+@import	"animate/ani/fade-enter/fadeIn",
+	"animate/ani/fade-enter/fadeInDown",
+	"animate/ani/fade-enter/fadeInDownBig",
+	"animate/ani/fade-enter/fadeInLeft",
+	"animate/ani/fade-enter/fadeInLeftBig",
+	"animate/ani/fade-enter/fadeInRight",
+	"animate/ani/fade-enter/fadeInRightBig",
+	"animate/ani/fade-enter/fadeInUp",
+	"animate/ani/fade-enter/fadeInUpBig",
+	"animate/ani/fade-exit/fadeOut",
+	"animate/ani/fade-exit/fadeOutDown",
+	"animate/ani/fade-exit/fadeOutDownBig",
+	"animate/ani/fade-exit/fadeOutLeft",
+	"animate/ani/fade-exit/fadeOutLeftBig",
+	"animate/ani/fade-exit/fadeOutRight",
+	"animate/ani/fade-exit/fadeOutRightBig",
+	"animate/ani/fade-exit/fadeOutUp",
+	"animate/ani/fade-exit/fadeOutUpBig";
+
+// FLIP
+@import "animate/ani/flippers/flip",
+	"animate/ani/flippers/flipInX",
+	"animate/ani/flippers/flipInY",
+	"animate/ani/flippers/flipOutX",
+	"animate/ani/flippers/flipOutY";
+
+// LIGHTSPEED
+@import	"animate/ani/lightspeed/lightSpeedIn",
+	"animate/ani/lightspeed/lightSpeedOut";
+
+// ROTATE
+@import	"animate/ani/rotate-enter/rotateIn",
+	"animate/ani/rotate-enter/rotateInDownLeft",
+	"animate/ani/rotate-enter/rotateInDownRight",
+	"animate/ani/rotate-enter/rotateInUpLeft",
+	"animate/ani/rotate-enter/rotateInUpRight",
+	"animate/ani/rotate-exit/rotateOut",
+	"animate/ani/rotate-exit/rotateOutDownLeft",
+	"animate/ani/rotate-exit/rotateOutDownRight",
+	"animate/ani/rotate-exit/rotateOutUpLeft",
+	"animate/ani/rotate-exit/rotateOutUpRight";
+
+// SLIDE
+@import "animate/ani/slide-enter/slideInDown",
+	"animate/ani/slide-enter/slideInLeft",
+	"animate/ani/slide-enter/slideInRight",
+	"animate/ani/slide-enter/slideInUp",
+	"animate/ani/slide-exit/slideOutDown",
+	"animate/ani/slide-exit/slideOutLeft",
+	"animate/ani/slide-exit/slideOutRight",
+	"animate/ani/slide-exit/slideOutUp";
+
+// SPECIAL
+@import "animate/ani/special/hinge",
+	"animate/ani/special/rollIn",
+	"animate/ani/special/rollOut";
+
+// ZOOM
+@import "animate/ani/zoom-enter/zoomIn",
+	"animate/ani/zoom-enter/zoomInDown",
+	"animate/ani/zoom-enter/zoomInLeft",
+	"animate/ani/zoom-enter/zoomInRight",
+	"animate/ani/zoom-enter/zoomInUp",
+	"animate/ani/zoom-exit/zoomOut",
+	"animate/ani/zoom-exit/zoomOutDown",
+	"animate/ani/zoom-exit/zoomOutLeft",
+	"animate/ani/zoom-exit/zoomOutRight",
+	"animate/ani/zoom-exit/zoomOutUp";

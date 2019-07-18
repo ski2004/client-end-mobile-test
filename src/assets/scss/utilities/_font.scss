@@ -1,0 +1,37 @@
+// // Type display classes
+.fz-1 {
+    @include font-size($fz1-size);
+    font-weight: $fz1-weight;
+    line-height: $fz-line-height;
+  }
+.fz-2 {
+  @include font-size($fz2-size);
+  font-weight: $fz2-weight;
+  line-height: $fz-line-height;
+}
+.fz-3 {
+  @include font-size($fz3-size);
+  font-weight: $fz3-weight;
+  line-height: $fz-line-height;
+}
+.fz-4 {
+  @include font-size($fz4-size);
+  font-weight: $fz4-weight;
+  line-height: $fz-line-height;
+}
+
+.fz-5 {
+    @include font-size($fz5-size);
+    font-weight: $fz5-weight;
+    line-height: $fz-line-height;
+}
+
+
+.fz-icon-3{
+  font-size: 26px;
+  // @include font-size(70px);
+}
+.fz-icon-5{
+  font-size: 40px;
+  // @include font-size(70px);
+}

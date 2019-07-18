@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode development",
+    "build:prod": "cross-env NODE_ENV=production vue-cli-service build",
+    "build:anay": "cross-env NODE_ENV=analyzer vue-cli-service build",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -18,9 +23,15 @@
     "@vue/cli-plugin-unit-mocha": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "axios": "^0.17.1",
     "chai": "^4.1.2",
+    "compression-webpack-plugin": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^8.0.0",
+    "moment": "^2.24.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.3.2"
   }
 }

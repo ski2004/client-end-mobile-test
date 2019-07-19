@@ -1,0 +1,85 @@
+#loading{
+    background:#000;
+    z-index:99999;
+    @extend %pos-f;
+    @extend %p-all;
+
+    .loapic{
+      @extend %p-center;
+      @extend %pos-f;
+    }
+
+    .log {
+      display: inline-block;
+      //第一款式
+      &.o1{
+        div{
+          width: 10px;
+          height: 10px;
+          // @include size(10px);
+          border-radius: 100%;
+          display: inline-block;
+          animation: bounce 1s infinite;
+
+          &:nth-child(1){
+            animation-delay: .1s;
+            background: #009DC6;
+          }
+
+          &:nth-child(2) {
+            animation-delay: .3s;
+            background: #e8b440;
+          }
+
+          &:nth-child(3) {
+            animation-delay: .5s;
+            background: #b62327;
+          }
+        }
+        @-webkit-keyframes bounce {
+          0%, 100% {
+            opacity: 1;
+          }
+          60% {
+            opacity: .0;
+          }
+        }
+        
+      }
+
+      //第二款
+      &.o2{
+        animation:flip 1s infinite;
+        @-webkit-keyframes flip{
+          from {
+            transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+            animation-timing-function: ease-out;
+          }
+          40% {
+            transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+            animation-timing-function: ease-out;
+          }
+          50% {
+            transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+            animation-timing-function: ease-in;
+          }
+          80% {
+            transform: perspective(400px) scale3d(.95, .95, .95);
+            animation-timing-function: ease-in;
+          }
+          to {
+            transform: perspective(400px);
+            animation-timing-function: ease-in;
+          }
+        }
+      }
+      
+    }
+    
+}
+
+
+
+
+
+

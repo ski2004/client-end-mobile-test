@@ -14,11 +14,15 @@ module.exports = {
     }
 
     // 別名
-    // config.resolve.alias = {
-    //   'assets': '@/assets',
-    //   'components': '@/components',
-    //   'views': '@/views',
-    // }
+    config.resolve.alias = {
+      '@/assets': __dirname + '/public/assets',
+      '@/components': __dirname + '/src/components',
+      '@/views': __dirname + '/src/views',
+      '@/helpers': __dirname + '/src/helpers',
+      // 'assets': '@/assets',
+      // 'components': '@/components',
+      // 'views': '@/views',
+    }
 
     // 分析工具
     if (process.env.VUE_APP_ANALY === 'true') {

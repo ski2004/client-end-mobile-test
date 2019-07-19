@@ -1,0 +1,9 @@
+// 陰影
+@mixin box-shadow-variant($parent, $color) {
+    #{$parent} {
+      box-shadow:0 .5rem 1rem rgba($color, .5);
+    }
+}
+@each $color, $value in $theme-colors {
+    @include box-shadow-variant(".shadow-#{$color}", $value);
+}

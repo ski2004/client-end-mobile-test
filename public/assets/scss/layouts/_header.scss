@@ -1,0 +1,35 @@
+.header{
+    width: 100%;
+    background-color: $white;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index:$zindex-tooltip;
+    @include transition(top 1s ease);
+    &.hide{
+        top:-83px;
+        box-shadow: 0 0 10px rgba($black, .2);
+      }
+    &.active{
+      top:0;
+    }
+
+    // 球 bar
+    .sport-bar{
+        @extend %border-bottom;
+        >div{
+            overflow: hidden;
+        }
+
+        .credits{
+            height: 20px;
+        }
+    }
+
+    .control-bar{
+        @extend %border-bottom;
+
+    }
+
+
+}

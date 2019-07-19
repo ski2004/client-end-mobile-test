@@ -12,7 +12,7 @@ module.exports = {
     //   'components': '@/components',
     //   'views': '@/views',
     // }
-    if (process.env.NODE_ENV === 'analyzer') {
+    if (process.env.VUE_APP_ANALY === 'true') {
       config.plugins.push(
         new BundleAnalyzerPlugin(
           {
@@ -39,22 +39,6 @@ module.exports = {
         threshold: 10240,
         minRatio: 0.8
       }))
-      config.plugins.push(
-        new BundleAnalyzerPlugin(
-          {
-            analyzerMode: 'server',//server = 編譯就運行  disabled = 指定運行(正式)
-            analyzerHost: '127.0.0.1',
-            analyzerPort: 8889,
-            reportFilename: 'report.html',
-            defaultSizes: 'parsed',
-            openAnalyzer: false,
-            generateStatsFile: false,
-            statsFilename: 'stats.json',
-            statsOptions: null,
-            logLevel: 'info'
-          }
-        )
-      )
     }
 
   },

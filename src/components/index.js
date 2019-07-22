@@ -12,6 +12,6 @@ requireComponent.keys().forEach(fileName => {
   fileName.replace(/^\.\//, '').replace(/\.vue/, '').split('/').forEach( s =>{
     componentName.push(upperFirst(camelCase(s)))
   })
-
+  console.log(componentName.join('-'))
   Vue.component(componentName.join('-'), () => componentConfig.default || componentConfig)
 })

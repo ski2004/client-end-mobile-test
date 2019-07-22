@@ -1,2 +1,2 @@
-import './jquery'
-import './jquery.marquee.min'
+// import './jquery'
+// import './jquery.marquee.min'

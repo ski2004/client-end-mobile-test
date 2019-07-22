@@ -1,17 +1,21 @@
 
-<template>
-  <div>
-    <!-- {{ 'ReadMe' | translate }} -->
-    BasketBall
-    <router-link to="/baseketball/1" >to 1</router-link>
-    <router-view></router-view>
-  </div>
-</template>
 
+<template>
+    <div class=" page">
+        <Common-Header/>
+        <Header/>
+        <div class="container">
+            <h2>{{title}}</h2>
+        </div>
+        <router-view></router-view>
+    </div>
+</template>
 
 
 <script>
 // import router from './router'
+import Header from "../../components/common/Header";
+
 export default {
   name: "",
   // 父組件來源
@@ -24,11 +28,12 @@ export default {
      * "common-Masks": Masks,
      * "report-Bet": Bet
      */
+    Header
   },
   data: function() {
     // 資料
     return {
-
+      title: this.$route.name
     };
   },
   watch: {

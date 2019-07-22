@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="418px" height="418px" viewBox="0 0 418 418" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="23.3911869%" y1="4.01911085%" x2="74.8559677%" y2="93.3459823%" id="linearGradient-1">
+            <stop stop-color="#FFBB00" offset="0%"></stop>
+            <stop stop-color="#FFA200" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M209,418 C324.427513,418 418,324.427513 418,209 C418,93.5724873 324.427513,0 209,0 C93.5724873,0 0,93.5724873 0,209 C0,324.427513 93.5724873,418 209,418 Z M209,379 C115.111593,379 39,302.888407 39,209 C39,115.111593 115.111593,39 209,39 C302.888407,39 379,115.111593 379,209 C379,302.888407 302.888407,379 209,379 Z" id="橢圓形" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+        <polygon id="三角形" fill="#FFBB00" points="129.5 78.4244604 162.714286 184.179856 96.2857143 184.179856"></polygon>
+        <polygon id="三角形copy" fill="#FFBB00" points="289.357143 78.4244604 322.571429 184.179856 256.142857 184.179856"></polygon>
+        <polygon id="矩形" fill="#FFA200" transform="translate(210.479044, 219.448351) rotate(44.000000) translate(-210.479044, -219.448351) " points="275.734078 107.989794 324.484753 118.747181 291.826561 309.754878 104.786925 330.906908 96.4733338 281.099882"></polygon>
+    </g>
+</svg>

@@ -3,15 +3,28 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const productionGzipExtensions = ['js', 'css'] // 需要gzip压缩的文件后缀
 const webpack = require('webpack') //引入webpack库
 
+
 module.exports = {
   outputDir: process.env.VUE_APP_OUTPUT_DIR || 'dist',
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   configureWebpack: config => {
-    // config.resolve.alias = {
-    //   'assets': '@/assets',
-    //   'components': '@/components',
-    //   'views': '@/views',
-    // }
+    config.externals = {
+      "vue": "Vue",
+      "vuex": "Vuex",
+      "vue-router": "VueRouter",
+    }
+
+    // 別名
+    config.resolve.alias = {
+      '@/assets': __dirname + '/public/assets',
+      '@/components': __dirname + '/src/components',
+      '@/filter': __dirname + '/src/filter',
+      '@/views': __dirname + '/src/views',
+      '@/view_style': __dirname + `/src/views/${process.env.VUE_APP_STYLE}`,
+      '@/helpers': __dirname + '/src/helpers',
+    }
+
+    // 分析工具
     if (process.env.VUE_APP_ANALY === 'true') {
       config.plugins.push(
         new BundleAnalyzerPlugin(

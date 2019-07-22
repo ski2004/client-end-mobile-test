@@ -70,13 +70,13 @@
     // let jst = window.jsTech;
     // let user = jst.dynamic.user;
     // var option = jst.options;
-
+    import menu from '../helpers/data/HomeMenu'
     export default {
 
         name: "Home",
         data: () => {
             return {
-                menu: [],
+                menu: menu,
                 user: {
                     id: 'user.id',
                     name: 'user.name'
@@ -95,7 +95,9 @@
 </script>
 
 <style scoped lang="scss">
-
+    .page{
+        background:red ;
+    }
     .badge-point {
         position: absolute;
         top: 2px;

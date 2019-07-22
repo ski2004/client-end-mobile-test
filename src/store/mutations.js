@@ -3,7 +3,6 @@
 export default {
   //
   update_lang( state , o) {
-    console.log(o)
     state.lang = o 
   },
 }

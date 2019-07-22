@@ -1,13 +1,13 @@
 {
-  "name": "test",
+  "name": "sport",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode development",
     "build:prod": "vue-cli-service build --mode production",
-    "build:anay": "cross-env VUE_APP_ANALY=true vue-cli-service build",
-    "build:anay-prod": "cross-env VUE_APP_ANALY=true vue-cli-service build --mode production",
+    "build:analy": "cross-env VUE_APP_ANALY=true vue-cli-service build",
+    "build:analy-prod": "cross-env VUE_APP_ANALY=true vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {

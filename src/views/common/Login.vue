@@ -1,27 +1,30 @@
 <template>
   <div class="container">
-    <!-- <Language /> -->
-    <select @change="ChangLanguage()" v-model="lang">
-      <option value="cn" >cn</option>
-      <option value="en" >en</option>
-    </select>
+    <div class="text-right py-3">
+      <button type="button" class="btn btn-link p-0" @click="active=!active">
+        <svg class="lang-icon" aria-hidden="true">
+          <use xlink:href="#js-China" />
+        </svg>
+      </button>
+    </div>
+    <Common-Mask :active.sync="active" :background_style="false" width="90%"  view="Login-Language" ></Common-Mask>
     <div class="text-center">
       <img src="/assets/images/logo/logo-img.svg" alt />
     </div>
     <form class="form-signin">
       <div class="py-4">
         <div class="form-group">
-          <input type="text" class="form-control" name="uname" required autofocus />
+          <input type="text" class="form-control" name="uname"  :placeholder="$translate.get('請輸入帳號')" required autofocus />
           <div class="invalid-feedback">{{ '無此帳號，請重新輸入' | translate }}</div>
         </div>
         <div class="form-group">
-          <input type="password" id="password" class="form-control" required />
+          <input type="password" id="password" class="form-control" :placeholder="$translate.get('請輸入密碼')" required />
         </div>
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="agree" />
           <label class="custom-control-label" for="agree">
-            我同意遵守
-            <a href="#">我同意遵守</a>
+            {{ '我同意遵守' | translate }}
+            <a href="#">{{ '我同意遵守' | translate }}</a>
           </label>
         </div>
       </div>
@@ -38,7 +41,7 @@
         </div>
         <div class="form-group">
           <button type="button" class="btn btn-outline-basic btn-block">
-            <i class="fas fa-desktop"></i> 電腦登入
+            <i class="fas fa-desktop"></i> {{ '電腦登入' | translate }}
           </button>
         </div>
       </div>

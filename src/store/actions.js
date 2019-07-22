@@ -2,8 +2,7 @@
 
 export default {
   //
-  lang_change(context, o){
-    console.log(o)
+  update_lang(context, o){
     context.commit('update_lang', o)
   }
 }

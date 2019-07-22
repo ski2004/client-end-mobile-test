@@ -11,7 +11,7 @@ npm install > npm run serve
 :---            |   :---              |   :---
 ./dist          |   *           |   js檔轉譯後輸出的預設路徑
 /public         |   /assets/*         | 美術設計相關
-./src           |   /components/*   |   元件放此
+./src           |   /components/*   |   元件放此,共用元件命名規則 = '${資料夾}-${檔名}'
 -               |   /filter/*    |   過濾器相關放此
 -               |   /helpers/*    |   共用的js,如api
 -               |   /modula/*   |   模組相關放此

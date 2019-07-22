@@ -13,5 +13,6 @@ requireComponent.keys().forEach(fileName => {
     componentName.push(upperFirst(camelCase(s)))
   })
   console.log(componentName.join('-'))
-  Vue.component(componentName.join('-'), () => componentConfig.default || componentConfig)
+  // 共用元件命名規則 = 資料夾 + '-' + 檔名
+  Vue.component(componentName.join('-'), componentConfig.default)
 })

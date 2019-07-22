@@ -3,6 +3,7 @@ const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const productionGzipExtensions = ['js', 'css'] // 需要gzip压缩的文件后缀
 const webpack = require('webpack') //引入webpack库
 
+
 module.exports = {
   outputDir: process.env.VUE_APP_OUTPUT_DIR || 'dist',
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
@@ -17,11 +18,10 @@ module.exports = {
     config.resolve.alias = {
       '@/assets': __dirname + '/public/assets',
       '@/components': __dirname + '/src/components',
+      '@/filter': __dirname + '/src/filter',
       '@/views': __dirname + '/src/views',
+      '@/view_style': __dirname + `/src/views/${process.env.VUE_APP_STYLE}`,
       '@/helpers': __dirname + '/src/helpers',
-      // 'assets': '@/assets',
-      // 'components': '@/components',
-      // 'views': '@/views',
     }
 
     // 分析工具

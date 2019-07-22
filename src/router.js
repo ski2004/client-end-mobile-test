@@ -1,7 +1,7 @@
 // import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Login from './views/Login.vue'
+import Home from './views/layout/Home.vue'
+import Login from './views/layout/Login.vue'
 // import Baseketball from './modula/Baseketball/Index'
 
 import Baseketball from './modula/Baseketball/router'

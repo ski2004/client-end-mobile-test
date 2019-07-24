@@ -8,12 +8,14 @@ module.exports = {
   outputDir: process.env.VUE_APP_OUTPUT_DIR || 'dist',
   publicPath: process.env.VUE_APP_PUBLIC_PATH || '/',
   configureWebpack: config => {
-    config.externals = {
-      "vue": "Vue",
-      "vuex": "Vuex",
-      "vue-router": "VueRouter",
+    // 單元測試需用內部的vue
+    if (process.env.VUE_APP_TEST === 'false') {
+      config.externals = {
+        "vue": "Vue",
+        "vuex": "Vuex",
+        "vue-router": "VueRouter",
+      }
     }
-
     // 別名
     config.resolve.alias = {
       '@/assets': __dirname + '/public/assets',

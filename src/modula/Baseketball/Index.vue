@@ -1,35 +1,21 @@
 
 
 <template>
-    <div class=" page">
-        <Common-Header/>
-        <Header/>
-        <div class="container">
-            <h2>{{title}}</h2>
-        </div>
-        <router-view></router-view>
-    </div>
+  <div class="page">
+    Baseketball
+    <router-view></router-view>
+  </div>
 </template>
 
 
 <script>
-// import router from './router'
-import Header from "../../components/common/Header";
+
 
 export default {
   name: "",
   // 父組件來源
   props: {},
-  components: {
-    /** 
-     * 引入的組件  
-     * 共用的才需rename 方便維護
-     * "資料夾-檔名" : 元件名
-     * "common-Masks": Masks,
-     * "report-Bet": Bet
-     */
-    Header
-  },
+  components: {},
   data: function() {
     // 資料
     return {
@@ -44,8 +30,7 @@ export default {
   },
   methods: {
     // 初始
-    async Oninit() {
-    },
+    async Oninit() {}
   },
   //BEGIN--生命週期
   beforeCreate: function() {

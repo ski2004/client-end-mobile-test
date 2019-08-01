@@ -32,7 +32,7 @@ export default {
   },
   data: () => {
     return {
-      lang: "cn",
+
       list: [
         { key: "cn", name: "简体", xlink: "#js-China" },
         { key: "tw", name: "繁體", xlink: "#js-HongKong" },
@@ -45,10 +45,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["update_lang"]),
+    ...mapActions(["language"]),
     changLanguage: function(value) {
       this.$translate.change(value);
-      this.update_lang(this.lang);
+      this.language({ data: value , src: 'c01-1' });
       this.close();
     }
   }

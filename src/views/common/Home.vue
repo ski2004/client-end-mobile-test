@@ -65,34 +65,6 @@
     </div>
 </template>
 
-<script>
-
-    // let jst = window.jsTech;
-    // let user = jst.dynamic.user;
-    // var option = jst.options;
-    import menu from '../helpers/data/HomeMenu'
-    export default {
-
-        name: "Home",
-        data: () => {
-            return {
-                menu: menu,
-                user: {
-                    id: 'user.id',
-                    name: 'user.name'
-                }
-            }
-        },
-        methods:{
-
-        },
-        mounted: () => {
-            $('.ind-announcement').marquee();
-        //    console.log($('.ind-announcement')) 
-        }
-    }
-
-</script>
 
 <style scoped lang="scss">
     .page{

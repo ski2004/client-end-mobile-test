@@ -1,0 +1,4 @@
+{
+    "min": "The %s field must be at least %s characters.",
+    "required": "The %s field is required."
+}

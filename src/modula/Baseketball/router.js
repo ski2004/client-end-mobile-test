@@ -1,5 +1,6 @@
 
 
+// //auto router
 // import upperFirst from 'lodash/upperFirst'
 // import camelCase from 'lodash/camelCase'
 
@@ -16,8 +17,6 @@
 // list.push({ path: '*', redirect: 'NotFinish' });
 
 // //模組路徑
-// export default list
-// import NotFinish from './NotFinish'
 export default [
   { path: 'NotFinish', component: () => import(`./NotFinish`) },
   { path: '*', redirect: 'NotFinish' }

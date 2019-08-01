@@ -14,17 +14,17 @@
     <form class="form-signin">
       <div class="py-4">
         <div class="form-group">
-          <input type="text" class="form-control" name="uname"  :placeholder="$translate.get('請輸入帳號')" required autofocus />
+          <input type="text" class="form-control " :class="{'is-invalid':warn.account}" v-model="form.account"  :placeholder="$translate.get('請輸入帳號')" required autofocus />
           <div class="invalid-feedback">{{ '無此帳號，請重新輸入' | translate }}</div>
         </div>
         <div class="form-group">
-          <input type="password" id="password" class="form-control" :placeholder="$translate.get('請輸入密碼')" required />
+          <input type="password" class="form-control" :class="{'is-invalid':warn.password}" v-model="form.password" :placeholder="$translate.get('請輸入密碼')" required />
         </div>
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="agree" />
+          <input type="checkbox" id="agree" class="custom-control-input" :class="{'is-invalid':warn.agree}" v-model="form.agree" />
           <label class="custom-control-label" for="agree">
             {{ '我同意遵守' | translate }}
-            <a href="#">{{ '我同意遵守' | translate }}</a>
+            <a href="#">{{ '服務規則' | translate }}</a>
           </label>
         </div>
       </div>
@@ -34,13 +34,13 @@
       </div>-->
       <div class="pb-1">
         <div class="form-group">
-          <button type="button" class="btn btn-basic btn-block text-light">
+          <button type="button" @click="login()" class="btn btn-basic btn-block text-light">
             <i class="fas fa-mobile-alt"></i>
             {{ '手機登入' | translate }}
           </button>
         </div>
         <div class="form-group">
-          <button type="button" class="btn btn-outline-basic btn-block">
+          <button type="button"  @click="login()" class="btn btn-outline-basic btn-block">
             <i class="fas fa-desktop"></i> {{ '電腦登入' | translate }}
           </button>
         </div>

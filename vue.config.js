@@ -11,6 +11,7 @@ module.exports = {
     // 單元測試需用內部的vue
     if (process.env.VUE_APP_TEST === 'false') {
       config.externals = {
+        
         "vue": "Vue",
         "vuex": "Vuex",
         "vue-router": "VueRouter",
@@ -36,7 +37,7 @@ module.exports = {
             analyzerPort: 8889,
             reportFilename: 'report.html',
             defaultSizes: 'parsed',
-            openAnalyzer: false,
+            openAnalyzer: true,
             generateStatsFile: false,
             statsFilename: 'stats.json',
             statsOptions: null,
@@ -45,7 +46,7 @@ module.exports = {
         )
       )
     }
-
+    // 正式模式
     if (process.env.NODE_ENV === 'production') {
       // gzip
       config.plugins.push(new CompressionWebpackPlugin({

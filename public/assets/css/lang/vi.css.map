@@ -1,0 +1,1 @@
+{"version":3,"sources":["lang/vi.scss"],"names":[],"mappings":"AAAA;EAGY,yBAAwB;EACxB,gBAAe,EAClB","file":"vi.css","sourcesContent":["body{\n    &:lang(vi){\n        .btn {\n            padding: 0.275rem 0.3rem;\n            font-size: 14px;\n        }\n    \n    \n    \n    \n    \n    \n    \n    \n    }\n}\n"]}

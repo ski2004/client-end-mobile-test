@@ -1,0 +1,11 @@
+body:lang(vi) .btn {
+  padding: 0.275rem 0.3rem;
+  font-size: 14px; }
+
+body:lang(th) {
+  font-family: "SF Pro TH","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif; }
+  body:lang(th) .btn {
+    padding: 0.275rem 0.3rem;
+    font-size: 14px; }
+
+/*# sourceMappingURL=lang.css.map */

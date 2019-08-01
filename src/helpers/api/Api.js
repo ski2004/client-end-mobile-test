@@ -1,7 +1,9 @@
 import axios from 'axios'
 const qs = require('qs')
-const api = {
-    async get (url, data) {
+
+
+export default {
+    async get(url, data) {
         try {
             let res = await axios.get(url, qs.stringify(data))
             res = res.data
@@ -13,7 +15,7 @@ const api = {
             console.log(err)
         }
     },
-    async post (url, data) {
+    async post(url, data) {
         try {
             let res = await axios.post(url, qs.stringify(data), { responseType: 'json' })
             res = res.data
@@ -26,4 +28,5 @@ const api = {
         }
     },
 }
-export const Api = api;
+
+// export const Api = api;

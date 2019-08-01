@@ -8,14 +8,16 @@
     "build:prod": "vue-cli-service build --mode production",
     "build:analy": "cross-env VUE_APP_ANALY=true vue-cli-service build",
     "build:analy-prod": "cross-env VUE_APP_ANALY=true vue-cli-service build --mode production",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "cross-env VUE_APP_TEST=true vue-cli-service test:unit"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "sprintf-js": "^1.1.2",
     "core-js": "^2.6.5",
     "jquery": "^3.4.1",
+    "js-cookie": "^2.2.0",
     "popper.js": "^1.15.0",
+    "sprintf-js": "^1.1.2",
+    "vee-validate": "^2.2.13",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"

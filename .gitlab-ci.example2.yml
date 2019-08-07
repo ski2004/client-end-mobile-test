@@ -26,9 +26,9 @@ develop:
      HOME_PATH: /home/deploy
   script:
     - echo develop begin
-    - ssh -T deploy@test17.iq168.net "cd $HOME_PATH/$CLIENT/  ;git checkout develop  ;git pull  ;"
-    - ssh -T deploy@test17.iq168.net "cd $HOME_PATH/$CLIENT/  ;npm run build:dev ;"
-    - ssh -T deploy@test17.iq168.net "cp -r $HOME_PATH/$CLIENT/dist/*  $HOME_PATH/$BACKEND/public/client/"
+    - ssh -T deploy@x.x.x.x "cd $HOME_PATH/$CLIENT/  ;git checkout develop  ;git pull  ;"
+    - ssh -T deploy@x.x.x.x "cd $HOME_PATH/$CLIENT/  ;npm run build:dev ;"
+    - ssh -T deploy@x.x.x.x "cp -r $HOME_PATH/$CLIENT/dist/*  $HOME_PATH/$BACKEND/public/client/"
     - echo develop end
   only:
     - 'develop'

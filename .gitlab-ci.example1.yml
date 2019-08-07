@@ -58,20 +58,20 @@ deploy_test:
       - eval $(ssh-agent -s)
       - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
       - ssh-add <(echo "$SSH_PRIVATE_KEY")
-      #- ssh root@10.159.1.94 "[[ ! -d "$TEST_ENV_PATH" ]] && git clone $REPO_URL $TEST_ENV_PATH || cd $TEST_ENV_PATH ; git pull"
-      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; git pull origin develop ; git checkout develop"
-      - scp -r public root@10.159.1.94:"$TEST_ENV_PATH"
-      #- scp -r vendor root@10.159.1.94:"$TEST_ENV_PATH"
+      #- ssh root@x.x.x.x "[[ ! -d "$TEST_ENV_PATH" ]] && git clone $REPO_URL $TEST_ENV_PATH || cd $TEST_ENV_PATH ; git pull"
+      - ssh root@x.x.x.x "cd $TEST_ENV_PATH ; git pull origin develop ; git checkout develop"
+      - scp -r public root@x.x.x.x:"$TEST_ENV_PATH"
+      #- scp -r vendor root@x.x.x.x:"$TEST_ENV_PATH"
       # php artisan queue:restart(docker restart queue) 避免queue緩存舊的程式碼
-      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; docker restart queue"
-      #- ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; cp .env.test .env"
-      #- ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; docker-compose down ; docker-compose up -d"
+      - ssh root@x.x.x.x "cd $TEST_ENV_PATH ; docker restart queue"
+      #- ssh root@x.x.x.x "cd $TEST_ENV_PATH ; cp .env.test .env"
+      #- ssh root@x.x.x.x "cd $TEST_ENV_PATH ; docker-compose down ; docker-compose up -d"
       # 清除緩存
-      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; php artisan cache:clear"
+      - ssh root@x.x.x.x "cd $TEST_ENV_PATH ; php artisan cache:clear"
       # 生成api文檔
-      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; ./showdoc_api.sh $TEST_ENV_PATH/app/Http/Controllers/"
+      - ssh root@x.x.x.x "cd $TEST_ENV_PATH ; ./showdoc_api.sh $TEST_ENV_PATH/app/Http/Controllers/"
       # 生成db文檔
-      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; ./showdoc_db.sh"
+      - ssh root@x.x.x.x "cd $TEST_ENV_PATH ; ./showdoc_db.sh"
       - echo 'deploy test ok'
     only:
       - develop

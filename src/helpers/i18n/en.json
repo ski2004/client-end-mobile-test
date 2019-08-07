@@ -1,11 +1,8 @@
 {
-    "cn":"Simplified",
-    "en":"English",
-    "tw":"Traditional",
-    
-    
-    "rule_min":"The %s field must be at least %s characters.",
-    "rule_required":"The %s field is required."
-    
-    
+    "cn": "Simplified",
+    "en": "English",
+    "tw": "Traditional",
+    "rule_min": "The %s field must be at least %s characters.",
+    "rule_required": "The %s field is required.",
+    "m000001": "Mobile login"
 }

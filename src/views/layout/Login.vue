@@ -26,7 +26,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["onLoading"]),
+    ...mapActions(["onLoading", "set"]),
     async login() {
       this.reset_warn();
       if (!this.validate()) {
@@ -71,6 +71,14 @@ export default {
         password: false,
         agree: false
       };
+    },
+    lang() {
+      let data = {
+        view: "Login-Language",
+        default_style: false,
+        active: !this.$store.state.mask.active
+      };
+      this.set({ act: "setMask", data: data, src: "v01-3" });
     }
   },
   created: function() {},

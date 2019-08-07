@@ -1,0 +1,77 @@
+variables:
+  MYSQL_ROOT_PASSWORD: 123456
+  MYSQL_DATABASE : lottery_game
+  DB_USERNAME : root
+
+stages:
+  - build
+  - test
+  - deploy
+
+stage_build:
+  image: tetraweb/php
+  tags:
+    - dada-test
+  stage: build
+  script:
+    #- npm set sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+    - npm install
+    - npm run dev
+  artifacts:
+    name: "${CI_JOB_STAGE}_${CI_COMMIT_REF_NAME}"
+    paths:
+     - public/
+     - .env
+  only:
+    - develop2
+
+test-dev:
+  image: yudada/laravel-www
+  variables:
+    CONTAINER_ROLE: "app"
+  tags:
+    - dada-test
+  services:
+    - mariadb:10.3.13
+
+  stage: test
+  script:
+    - cp .env.testing .env
+    - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    - php composer-setup.php
+    - php -r "unlink('composer-setup.php');"
+    - php composer.phar install
+    - php artisan key:generate
+    - php artisan migrate
+    - php vendor/bin/phpunit --coverage-text --colors=never --coverage-html=coverage
+  only:
+    - develop
+    
+deploy_test:
+    image: tetraweb/php
+    tags:
+      - dada-test
+    stage: deploy
+    script:
+      - 'which ssh-agent || ( yml update -y && yml install openssh-client -y )'
+      - mkdir -p ~/.ssh
+      - eval $(ssh-agent -s)
+      - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+      - ssh-add <(echo "$SSH_PRIVATE_KEY")
+      #- ssh root@10.159.1.94 "[[ ! -d "$TEST_ENV_PATH" ]] && git clone $REPO_URL $TEST_ENV_PATH || cd $TEST_ENV_PATH ; git pull"
+      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; git pull origin develop ; git checkout develop"
+      - scp -r public root@10.159.1.94:"$TEST_ENV_PATH"
+      #- scp -r vendor root@10.159.1.94:"$TEST_ENV_PATH"
+      # php artisan queue:restart(docker restart queue) 避免queue緩存舊的程式碼
+      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; docker restart queue"
+      #- ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; cp .env.test .env"
+      #- ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; docker-compose down ; docker-compose up -d"
+      # 清除緩存
+      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; php artisan cache:clear"
+      # 生成api文檔
+      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; ./showdoc_api.sh $TEST_ENV_PATH/app/Http/Controllers/"
+      # 生成db文檔
+      - ssh root@10.159.1.94 "cd $TEST_ENV_PATH ; ./showdoc_db.sh"
+      - echo 'deploy test ok'
+    only:
+      - develop

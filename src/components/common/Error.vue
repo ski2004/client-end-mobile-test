@@ -36,7 +36,7 @@ export default {
     ...mapActions(["errors"]),
     reset() {
       let data = { message: "", code: "", src: "" };
-      this.errors({ data: data, src: "c02-1" });
+      this.errors({ data: data, src: "cc02-1" });
     }
   },
 

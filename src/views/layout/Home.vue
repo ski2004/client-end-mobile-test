@@ -88,7 +88,6 @@ export default {
   },
   mounted: function() {
     $(".ind-announcement").marquee();
-    // this.onLoading({ data: false, src: "v03-1" });
   }
 };
 </script>

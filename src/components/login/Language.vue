@@ -34,13 +34,13 @@ export default {
     return {
 
       list: [
-        { key: "cn", name: "简体", xlink: "#js-China" },
-        { key: "tw", name: "繁體", xlink: "#js-HongKong" },
+        { key: "zh-cn", name: "简体", xlink: "#js-China" },
+        { key: "zh-tw", name: "繁體", xlink: "#js-HongKong" },
         { key: "en", name: "English", xlink: "#js-UnitedStates" },
-        { key: "cn", name: "Vietnam", xlink: "#js-Vietnam" },
-        { key: "cn", name: "ไทย", xlink: "#js-Thailand" },
-        { key: "cn", name: "대한민국", xlink: "#js-SouthKorea" },
-        { key: "cn", name: "日本", xlink: "#js-Japan" }
+        { key: "zh-cn", name: "Vietnam", xlink: "#js-Vietnam" },
+        { key: "zh-cn", name: "ไทย", xlink: "#js-Thailand" },
+        { key: "zh-cn", name: "대한민국", xlink: "#js-SouthKorea" },
+        { key: "zh-cn", name: "日本", xlink: "#js-Japan" }
       ]
     };
   },
@@ -48,7 +48,7 @@ export default {
     ...mapActions(["language"]),
     changLanguage: function(value) {
       this.$translate.change(value);
-      this.language({ data: value , src: 'c01-1' });
+      this.language({ data: value , src: 'cl01-1' });
       this.close();
     }
   }

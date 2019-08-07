@@ -1,0 +1,36 @@
+variables:
+  CLIENT: manage-client
+  BACKEND: super_manage
+
+
+stages:
+  # - test-unit
+  - develop
+  - QA
+  - master
+
+# 確認 CI 機器 資訊
+before_script:
+  - echo 'check CI server info:'
+  - printenv
+  - uname -a
+
+# ------------------------------------------------------------------------------------------
+# CI Server
+# ------------------------------------------------------------------------------------------
+develop:
+  stage: develop
+  # tags:
+  #   - l1
+  variables:
+     HOME_PATH: /home/deploy
+  script:
+    - echo develop begin
+    - ssh -T deploy@test17.iq168.net "cd $HOME_PATH/$CLIENT/  ;git checkout develop  ;git pull  ;"
+    - ssh -T deploy@test17.iq168.net "cd $HOME_PATH/$CLIENT/  ;npm run build:dev ;"
+    - ssh -T deploy@test17.iq168.net "cp -r $HOME_PATH/$CLIENT/dist/*  $HOME_PATH/$BACKEND/public/client/"
+    - echo develop end
+  only:
+    - 'develop'
+    # - 'dev0716_cicd'
+

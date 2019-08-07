@@ -55,10 +55,10 @@ export default {
   },
   methods: {
     // 初始
-    ...mapActions(["$act"]),
+    ...mapActions(["set"]),
     change(game) {
       let data = { game: game };
-      this.$act({ act: "game/setInfo", data: data, src: "c04-0" });
+      this.set({ act: "game/setInfo", data: data, src: "cc02-0" });
     },
     toggle(){
       this.$parent.toggle()

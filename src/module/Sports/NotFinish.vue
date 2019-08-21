@@ -1,17 +1,15 @@
 <template>
   <div>
-    <Common-Language />
+    <!-- not finish -->
+    {{ '未完成' | translate }}
   </div>
 </template>
-<!-- html分離方式 預設路徑:/views/common -->
-<!--template src="@/template/Home" /-->
-
 
 <script>
 export default {
   name: "",
   props: {
-    test: {
+    active: {
       type: Boolean,
       default: function() {
         return false;
@@ -61,6 +59,5 @@ export default {
   //END--生命週期
 };
 </script>
-
-<style lang="scss" scoped>
+<style scoped>
 </style>

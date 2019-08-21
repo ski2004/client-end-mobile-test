@@ -2,7 +2,7 @@ import { expect } from 'chai'
 import { shallowMount } from '@vue/test-utils'
 import Test from './Test.vue'
 
-describe('HelloWorld.vue', () => {
+describe('Test.vue', () => {
   it('renders props.msg when passed', () => {
     const msg = 'new message'
     const wrapper = shallowMount(Test, {

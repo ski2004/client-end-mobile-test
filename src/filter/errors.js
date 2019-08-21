@@ -1,11 +1,11 @@
 
-import validate from '@/helpers/vee-validate/filter'
-import translates from '@/helpers/i18n'
+// import validate from '@/helpers/vee-validate/filter'
+// import translates from '@/helpers/i18n'
 import { vsprintf } from 'sprintf-js'
 
 //過濾器
 var errors = (value, rule) => {
-  let translate = translates.get(`rule_${rule}`);
+  let translate = $ln.get(`rule_${rule}`);
   let res = validate.get(value, rule, translate);
   // 判斷欄位是否需要再翻譯
   let re = false;

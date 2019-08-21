@@ -1,10 +1,13 @@
 <template>
   <div>
-    <Common-Language />
+    <select v-model="selected" >
+      <option value="en">{{$ln('英文')}}</option>
+      <option value="zh-tw">{{$ln('繁體')}}</option>
+      <option value="zh-cn">{{$ln('簡體')}}</option>
+    </select>
+    {{$ln('簡體')}}
   </div>
 </template>
-<!-- html分離方式 預設路徑:/views/common -->
-<!--template src="@/template/Home" /-->
 
 
 <script>
@@ -21,10 +24,19 @@ export default {
   components: {},
   data: function() {
     // 資料
-    return {};
+    return {
+      selected:'en'
+    };
   },
   watch: {
     //監聽值
+    "selected"(language) {
+      // this.$i18n.locale = language;
+      // localStorage.setItem("super.manage.language", language);
+      //  this.$translate.change(language);
+      this.$ln_change(language);
+
+    }
   },
   computed: {
     //相依的資料改變時才做計算方法

@@ -9,8 +9,9 @@ const requireComponent = require.context(
 requireComponent.keys().forEach(fileName => {
   const componentConfig = requireComponent(fileName)
   let componentName = [] ;
+  // console.log(fileName)
   fileName.replace(/^\.\//, '').replace(/\.vue/, '').split('/').forEach( s =>{
-    componentName.push(upperFirst(camelCase(s)))
+    componentName.push(upperFirst(s))
   })
   console.log(componentName.join('-'))
   // 共用元件命名規則 = 資料夾 + '-' + 檔名

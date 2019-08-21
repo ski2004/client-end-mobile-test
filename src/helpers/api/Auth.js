@@ -1,5 +1,5 @@
 import Api from '@/helpers/api/Api'
-import { sprintf } from 'sprintf-js'
+// import { sprintf } from 'sprintf-js'
 
 const LOGIN = 'auth/login'
 const LOGOUT = 'auth/logout'

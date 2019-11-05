@@ -10,7 +10,7 @@
     <div class="mask" @click="close()"></div>
     <div
       :class="{
-        'default_style':default_style,
+        'default_style':type==='default',
         'content-in':active===true,
         'content-out':active===false,
         'center':type==='center',
@@ -26,7 +26,20 @@
 
 <script>
 import { mapActions } from "vuex";
-
+/**
+* showdoc
+* @catalog components/common
+* @title 遮罩
+* @description 畫面遮罩
+* @url src\components\common\Mask.vue
+* @param data 必选 Object 要給${view}元件的資料 
+* @param height 必选 String 遮罩高,預設90% 
+* @param width 可选 String 遮罩寬  
+* @param type 可选 String 遮罩類型,用於特殊呈現判斷,預設:default
+* @param active 可选 Boolean 顯示/隱藏,
+* @param view 可选 String,Object 用户昵称 ,元件名稱或是元件物件
+* @remark 这里是备注信息
+*/
 export default {
   name: "",
   props: {
@@ -37,6 +50,7 @@ export default {
         return {};
       }
     },
+    
     height: {
       type: String,
       default: function() {
@@ -60,13 +74,6 @@ export default {
       required: false,
       default: function() {
         return false;
-      }
-    },
-    default_style: {
-      //預設背景樣式
-      type: Boolean,
-      default: function() {
-        return true;
       }
     },
     view: {
@@ -99,7 +106,6 @@ export default {
       let data = { active: false };
       this.set({ act: "setMask", data: data, src: "cc01-0" });
       data = {
-        default_style: false,
         width: "90%",
         type: "center"
       };

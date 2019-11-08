@@ -27,17 +27,18 @@
 <script>
 import { mapActions } from "vuex";
 /**
-* showdoc
+* @showdoc
 * @catalog components/common
 * @title 遮罩
 * @description 畫面遮罩
-* @url src\components\common\Mask.vue
-* @param data 必选 Object 要給${view}元件的資料 
-* @param height 必选 String 遮罩高,預設90% 
-* @param width 可选 String 遮罩寬  
-* @param type 可选 String 遮罩類型,用於特殊呈現判斷,預設:default
-* @param active 可选 Boolean 顯示/隱藏,
-* @param view 可选 String,Object 用户昵称 ,元件名稱或是元件物件
+* @path src/components/common/Mask.vue
+* @type props
+* @param data Object 要給${view}元件的資料
+* @param height String 遮罩高,預設90%
+* @param width String 遮罩寬
+* @param type String 遮罩類型,用於特殊呈現判斷,預設:default
+* @param active Boolean 顯示/隱藏,
+* @param view String,Object 用户昵称,元件名稱或是元件物件
 * @remark 这里是备注信息
 */
 export default {
@@ -102,6 +103,21 @@ export default {
   methods: {
     //有無相依都會計算方法
     ...mapActions(["set"]),
+    /**
+    * @showdoc (偵測備註使用每個都要有)
+    * @catalog test/(資料夾層級,選填)
+    * @title 標題(一隻檔案有一個打過就可以,選填)
+    * @name name(func才有用必填 ,props用不到選填)
+    * @description 簡單描述(必填)
+    * - 簡單描述123(必填)
+    * @path src/views/example.vue(一隻檔案有一個打過就可以多打也沒影響,選填)
+    * @type props|methods 
+    * @param active Boolean 顯示/隱藏,(內容請勿有空格如:顯示 隱藏 ,選填 )
+    * @example
+    * > (* > 必有)
+    * > let params = { l_lv:this.level }
+    * > let res = await _account.getAccount(params);
+    */
     close() {
       let data = { active: false };
       this.set({ act: "setMask", data: data, src: "cc01-0" });

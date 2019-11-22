@@ -14,22 +14,23 @@ module.exports = {
         "vuex": "Vuex",
         "vue-router": "VueRouter",
       }
-    }
-    // 分離代碼避免vendor太肥
-    config.optimization= {
-      splitChunks: {
-        cacheGroups: {
-          vendors: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 1
-          },
-          lodash: {
-            test: /[\\/]node_modules[\\/]lodash[\\/]/,
-            name: 'lodash',
-            chunks: 'all',
-            priority: 2
+    
+      // 分離代碼避免vendor太肥
+      config.optimization= {
+        splitChunks: {
+          cacheGroups: {
+            vendors: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+              priority: 1
+            },
+            lodash: {
+              test: /[\\/]node_modules[\\/]lodash[\\/]/,
+              name: 'lodash',
+              chunks: 'all',
+              priority: 2
+            }
           }
         }
       }

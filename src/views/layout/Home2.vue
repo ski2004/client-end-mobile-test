@@ -1,25 +1,24 @@
 <template>
-  <div id="app" :lang="this.$store.state.lang">
-    <Common-Mask
-      :active.sync="this.$store.state.mask.active"
-      :default_style="this.$store.state.mask.default_style"
-      :type="this.$store.state.mask.type"
-      :view="this.$store.state.mask.view"
-      :width="this.$store.state.mask.width"
-    ></Common-Mask>
-    <Common-Error></Common-Error>
-    <Common-Loading :active.sync="this.$store.state.isLoading.enable"></Common-Loading>
-    <router-view />
-    <router-view name="abc" />
+  <div>
+    22222
+    <Common-Language />
   </div>
 </template>
+<!-- html分離方式 預設路徑:/views/common -->
+<!--template src="@/template/Home" /-->
+
 
 <script>
-import { log } from "util";
-
 export default {
   name: "",
-  props: {},
+  props: {
+    test: {
+      type: Boolean,
+      default: function() {
+        return false;
+      }
+    }
+  },
   components: {},
   data: function() {
     // 資料
@@ -33,6 +32,7 @@ export default {
   },
   methods: {
     // 初始
+    async Oninit() {}
   },
   //BEGIN--生命週期
   beforeCreate: function() {
@@ -40,13 +40,6 @@ export default {
   },
   created: function() {
     //實體建立完成。資料 $data 已可取得，但 $el 屬性還未被建立。
-    console.log(12132);
-    window.onbeforeunload = function(e) {
-      e = e || window.event;
-      console.log(9999999)
-      // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
-      return false ;
-    };
   },
   beforeMount: function() {
     //執行元素掛載之前。
@@ -70,8 +63,5 @@ export default {
 };
 </script>
 
-<style lang="scss">
-// @import '@/assets/css/all.css';
-// @import '@/assets/css/jstech.css';
-// @import '@/assets/css/vendor.css';
+<style lang="scss" scoped>
 </style>

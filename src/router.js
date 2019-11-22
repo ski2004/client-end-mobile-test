@@ -1,6 +1,7 @@
 // import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/layout/Home.vue'
+import Home2 from './views/layout/Home2.vue'
 import Login from './views/layout/Login.vue'
 // Vue.use(Router)
 
@@ -23,7 +24,14 @@ export default new Router({
       name: '404', path: '/404',
       component: (resovle) => import(`./views/layout/Page404`).then(resovle),
     },
-    { name: '大廳', path: '/', component: Home },
+    { name: '大廳', path: '/', components: {
+      // default: Home,
+      abc: Home2,
+    }},
+    { name: '大廳', path: '/test', components: {
+      default: Home,
+    }},
+    // { name: '大廳', path: '/', component: Home },
     { name: '登入', path: '/login', component: Login },
     { path: '*', redirect: '/404' },
   ],

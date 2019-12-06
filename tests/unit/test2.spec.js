@@ -19,7 +19,7 @@ describe('views/layout/Test2.vue.vue', () => {
 
 
   it('renders props.msg when passed', () => {
-    const msg = '賠率'
+    const msg = 'xxx'
     const wrapper = shallowMount(Test2, {
       propsData: { msg }
     })
@@ -29,6 +29,6 @@ describe('views/layout/Test2.vue.vue', () => {
     // wrapper.vm.jisuan()
     // console.log(wrapper.vm.$data);
     // wrapper.vm._data.ipt[1]
-    expect(wrapper.html()).to.include(msg)
+    expect(wrapper.html()).to.include('xaaaaa')
   })
 })

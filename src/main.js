@@ -24,6 +24,9 @@ import './plugins'
 import minins from './plugins/i18n/minins'
 Vue.mixin(minins)
 
+// require('swiper/dist/css/swiper.css')
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
 
 router.beforeEach((to, from, next) => {
   middleware.validate(to, from, next);

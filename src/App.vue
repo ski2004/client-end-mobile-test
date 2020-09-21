@@ -40,13 +40,7 @@ export default {
   },
   created: function() {
     //實體建立完成。資料 $data 已可取得，但 $el 屬性還未被建立。
-    console.log(12132);
-    window.onbeforeunload = function(e) {
-      e = e || window.event;
-      console.log(9999999)
-      // Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+
-      return false ;
-    };
+
   },
   beforeMount: function() {
     //執行元素掛載之前。

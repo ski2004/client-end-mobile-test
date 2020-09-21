@@ -1,8 +1,8 @@
 // import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/layout/Home.vue'
-import Home2 from './views/layout/Home2.vue'
-import Test2 from './views/layout/Test2.vue'
+import NodeJS from './views/layout/NodeJS.vue'
+import Test from './views/Test.vue'
 import Login from './views/layout/Login.vue'
 // Vue.use(Router)
 
@@ -27,10 +27,13 @@ export default new Router({
     },
     { name: '大廳', path: '/', components: {
       // default: Home,
-      abc: Home2,
+      abc: Home,
     }},
-    { name: 'Test2', path: '/test', components: {
-      default: Test2,
+    { name: 'Test', path: '/test', components: {
+      default: Test,
+    }},
+    { name: 'NodeJS', path: '/nodejs', components: {
+      default: NodeJS,
     }},
     // { name: '大廳', path: '/', component: Home },
     { name: '登入', path: '/login', component: Login },

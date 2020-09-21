@@ -1,25 +1,6 @@
 version: "3.7"
 
 services: 
-    nginx:
-        image: daneil780520/nginx-test
-        container_name: nginx-test
-        ports:
-            - 880:80
-        volumes:
-            - "./:/usr/share/nginx/html"
-            - ./docker:/etc/nginx/conf.d
-        depends_on: 
-            - php-fpm
-
-    php-fpm:
-        image: daneil780520/docker-test
-        container_name: php-fpm-test
-        environment:
-            CONTAINER_ROLE: app 
-        volumes:
-            - "./:/usr/share/nginx/html"
-
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         container_name: phpmyadmin_test
@@ -32,25 +13,14 @@ services:
             - redis
             - redisCommander
 
-    # mysql:
-    #     image: mysql:latest
-    #     container_name: mysql_test
-    #     ports: 
-    #         - "3306:3306"
-    #     environment: 
-    #         MYSQL_DATABASE: gamer888
-    #         MYSQL_ROOT_PASSWORD: 123456
-    #         MYSQL_USER: apple
-    #         MYSQL_PASSWORD: google
-    
     mysql:
-        image: mariadb:latest
+        image: mysql:latest
         container_name: mysql_test
         ports: 
             - "3306:3306"
         environment: 
             MYSQL_DATABASE: gamer888
-            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_ROOT_PASSWORD: password
             MYSQL_USER: apple
             MYSQL_PASSWORD: google
 
@@ -61,6 +31,21 @@ services:
             - "6379:6379"
         # environment:
         #     - REDIS_PASSWORD=my_password
+
+    golang:
+        image: golang:1.13.7-alpine3.11
+        container_name: golang_test
+        volumes: 
+            - .:/go/src/go-with-compose
+        working_dir: /go/src/go-with-compose
+        command: go run main.go
+        # restart: always
+        ports: 
+            - "8080:8080"
+        # depends_on:
+        #     - mysql
+        #     - redis
+        #     - phpmyadmin
 
     redisCommander:
         image: rediscommander/redis-commander:latest

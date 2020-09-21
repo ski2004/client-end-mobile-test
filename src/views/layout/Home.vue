@@ -1,10 +1,10 @@
-<template>
+<!--template>
   <div>
     <Common-Language />
   </div>
-</template>
+</template-->
 <!-- html分離方式 預設路徑:/views/common -->
-<!--template src="@/template/Home" /-->
+<template src="@/template/Home" />
 
 
 <script>

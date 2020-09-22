@@ -1,92 +1,74 @@
 <template>
-  <div>
-    <p>
-      測試 websocket 聊天室
-    </p>
-    name:<input type="text" v-model="form.name" >
-    age:<input type="text" v-model="form.age" >
-    <button @click="add()" >add</button>
+  <div class="test">
+    <table class="table table-bordered">
+      <tr>
+        <td>A</td><td>0</td>
+      </tr>
+    </table>
+    <div class="message">
+      <ul v-for="(item,i) in list" >
+        <li>{{item}}</li>
+      </ul>
+    </div>
+    <button type="button" @click="test()" class>send</button>
   </div>
 </template>
 
-
 <script>
 export default {
-  name: "",
-  props: {
-    test: {
-      type: Function,
-      default: function () {
-        return false;
-      },
-    },
-  },
-  data: function () {
-    // 資料
+  name: "test",
+  data() {
     return {
-      form : {
-        name: '',
-        age: 10,
-      }
+      websock: null,
+      list:[]
     };
   },
-  watch: {
-    //監聽值
+  created() {
+    this.initWebSocket();
   },
-  computed: {
-    //相依的資料改變時才做計算方法
-   
+  destroyed() {
+    this.websock.close(); //离开路由之后断开websocket连接
   },
   methods: {
-     add(){
-      // this.$http
-      // .post("http://localhost:3005/api/add",this.form)
-      // .then((response) => {
-      //   this.datas = response.data;
-      //   console.log(response.data);
-      // })
-      // .catch(function (error) {
-      //   console.log(error);
-      // });
-    }
+    test() {
+      let a = { test: new Date().getTime() };
+      this.websocketsend(a);
+    },
+    initWebSocket() {
+      //初始化weosocket
+      const wsuri = "ws://127.0.0.1:3005";
+      this.websock = new WebSocket(wsuri);
+      this.websock.onmessage = this.websocketonmessage;
+      this.websock.onopen = this.websocketonopen;
+      this.websock.onerror = this.websocketonerror;
+      this.websock.onclose = this.websocketclose;
+    },
+    websocketonopen() {
+      //连接建立之后执行send方法发送数据
+      let actions = { test: "12345" };
+      this.websocketsend(actions);
+    },
+    websocketonerror() {
+      //连接建立失败重连
+      this.initWebSocket();
+    },
+    websocketonmessage(e) {
+      //数据接收
+      const redata = JSON.parse(e.data);
+      console.log("redata:", redata);
+      this.list.push(redata);
+    },
+    websocketsend(Data) {
+      //数据发送
+
+      this.websock.send(JSON.stringify(Data));
+    },
+    websocketclose(e) {
+      //关闭
+      console.log("断开连接", e);
+    },
   },
-  //BEGIN--生命週期
-  beforeCreate: function () {
-    //實體初始化
-  },
-  created: function () {
-    //實體建立完成。資料 $data 已可取得，但 $el 屬性還未被建立。
-  },
-  beforeMount: function () {
-    //執行元素掛載之前。
-  },
-  mounted: function () {
-    //元素已掛載， $el 被建立。
-    this.$http
-      .get("http://localhost:3005/api/list")
-      .then((response) => {
-        this.datas = response.data;
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
-  beforeUpdate: function () {
-    //當資料變化時被呼叫，還不會描繪 View。
-  },
-  updated: function () {
-    //當資料變化時被呼叫，還不會描繪 View。
-  },
-  beforeDestroy: function () {
-    //實體還可使用。
-  },
-  destroyed: function () {
-    //實體銷毀。
-  },
-  //END--生命週期
 };
 </script>
-
-<style lang="scss" scoped>
+<style lang='less'>
 </style>

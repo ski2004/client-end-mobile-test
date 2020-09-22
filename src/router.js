@@ -2,6 +2,7 @@
 import Router from 'vue-router'
 import Home from './views/layout/Home.vue'
 import NodeJS from './views/layout/NodeJS.vue'
+import Chat from './views/layout/Chat.vue'
 import Test from './views/Test.vue'
 import Login from './views/layout/Login.vue'
 // Vue.use(Router)
@@ -34,6 +35,9 @@ export default new Router({
     }},
     { name: 'NodeJS', path: '/nodejs', components: {
       default: NodeJS,
+    }},
+    { name: 'Chat', path: '/chat', components: {
+      default: Chat,
     }},
     // { name: '大廳', path: '/', component: Home },
     { name: '登入', path: '/login', component: Login },

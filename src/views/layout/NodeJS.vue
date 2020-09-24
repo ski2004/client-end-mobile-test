@@ -5,7 +5,7 @@
     <input type="text" v-model="form.name" />
     age:
     <input type="text" v-model="form.age" />
-    <button @click="add()">add</button>
+    <button @click="set_add()">add</button>
 
     list:{{list}}
   </div>

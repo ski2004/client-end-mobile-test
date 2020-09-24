@@ -12,7 +12,7 @@ const SocketServer = require('ws').Server
 
 
 //port 號會由 Heroku 給予，因此不再自行指定
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 3006;
 const host = process.env.HOST || '127.0.0.1'
 const server = app.listen(port, host)
 console.log('Server listening on ' + host + ':' + port)

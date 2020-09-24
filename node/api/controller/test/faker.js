@@ -21,11 +21,14 @@ module.exports = {
    * @param {*} next 
    */
   list: function (req, res, next) {
-    res.json({
-      result: _.randomArray(10, { ...struct }),
-      code: 200,
-      msg: '成功'
-    })
+    setTimeout(()=>{
+      res.json({
+        result: _.randomArray(10, { ...struct }),
+        code: 200,
+        msg: '成功'
+      })
+    },1000)
+
   },
   /**
    * Test 新增一筆

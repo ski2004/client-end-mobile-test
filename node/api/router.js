@@ -1,7 +1,7 @@
 // import { Router } from 'express'
 const Router = require('express').Router
-// const test = require('./controller/test/faker');//假資料不透過DB
-const test = require('./controller/test')
+const test = require('./controller/test/faker');//假資料不透過DB
+// const test = require('./controller/test')
 var router = Router()
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {

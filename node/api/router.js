@@ -19,6 +19,7 @@ router.use(function timeLog(req, res, next) {
 
 router.post('/add', test.add);
 router.get('/list', test.list);
+
 // middleware that is specific to this router
 // Add databases Routes
 

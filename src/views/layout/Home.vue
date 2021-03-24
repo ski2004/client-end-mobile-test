@@ -1,10 +1,14 @@
-<!--template>
+<template>
   <div>
-    <Common-Language />
+    <router-link to="/test">test</router-link><br>
+    <router-link to="/nodejs">nodejs</router-link><br>
+    <router-link to="/chat">chat</router-link><br>
+    <router-link to="/login">登入</router-link><br>
+    <router-link to="/test">test</router-link><br>
   </div>
-</template-->
+</template>
 <!-- html分離方式 預設路徑:/views/common -->
-<template src="@/template/Home" />
+<!--<template src="@/template/Home" />-->
 
 
 <script>

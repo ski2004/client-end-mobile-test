@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mysql": "^2.18.1",
     "sprintf-js": "^1.1.2",
     "swiper": "^6.1.2",
